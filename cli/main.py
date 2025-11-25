@@ -78,11 +78,26 @@ def create_app():
         """
         try:
             pkg_version = version("gensh-cli")  # Use your actual package name
+            print(f"[bold cyan]gensh version:[/bold cyan] {pkg_version}")
         except PackageNotFoundError:
-            # fallback if running from local source
-            from core.version import __version__ as pkg_version
-    
-        print(f"[bold cyan]gensh version:[/bold cyan] {pkg_version}")
+            # fallback if running from local source - try reading pyproject.toml
+            pkg_version = "unknown"
+            try:
+                try:
+                    import tomllib as _tomllib  # Python 3.11+
+                except ImportError:
+                    import tomli as _tomllib  # type: ignore
+
+                project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+                pyproject_path = os.path.join(project_root, "pyproject.toml")
+                if os.path.exists(pyproject_path):
+                    with open(pyproject_path, "rb") as f:
+                        data = _tomllib.load(f)
+                        pkg_version = data.get("project", {}).get("version") or data.get("tool", {}).get("poetry", {}).get("version") or pkg_version
+            except Exception:
+                pass
+
+            print(f"[bold cyan]gensh version:[/bold cyan] {pkg_version}")
 
 
     # =====================================================================
