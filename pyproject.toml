@@ -22,5 +22,8 @@ classifiers = [
     "Operating System :: OS Independent"
 ]
 
+[tool.setuptools.packages.find]
+where = ["cli", "core"]
+
 [project.scripts]
 gensh = "cli.main:main"
