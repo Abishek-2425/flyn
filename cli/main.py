@@ -19,7 +19,7 @@ import os
 
 def create_app():
     
-    app = typer.Typer(help="GSh — Natural-language to shell command converter")   
+    app = typer.Typer(help="gsh — Natural-language to shell command converter")   
 
     # --------------------------
     # Subgroup: gsh config ...
