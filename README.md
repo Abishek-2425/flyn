@@ -1,4 +1,4 @@
-# Generative Shell-composer (Gensh)
+# Generative Shell (GSh)
 
 
 * A natural-language to shell command converter CLI tool. It allows you to type instructions in plain English, and it generates OS-specific shell commands safely. It also includes diagnostic tools, command explanation, history tracking, and configuration management.
