@@ -1,4 +1,4 @@
-# Generative Shell (GSh)
+# Quick Workspace Executor (QWE)
 
 
 * A natural-language to shell command converter CLI tool. It allows you to type instructions in plain English, and it generates OS-specific shell commands safely. It also includes diagnostic tools, command explanation, history tracking, and configuration management.
@@ -15,7 +15,7 @@
 - Configure API key, model, OS, and temperature
 - Diagnostic tools for verifying API and model connectivity
 - Explain shell commands with detailed breakdowns
-- Version command to check current Gensh version
+- Version command to check current qwe version
 ```
 
 ---
@@ -26,7 +26,7 @@
 
 ```bash
 git clone <repo-url>
-cd gensh
+cd qwe
 ```
 
 2. Create a virtual environment:
@@ -61,14 +61,14 @@ This will install `typer`, `rich`, `google-generativeai`, and other required pac
 
 ## Usage
 
-All commands use the `gensh` CLI.
+All commands use the `qwe` CLI.
 
 ### Run Commands
 
 Generate shell commands from natural language:
 
 ```bash
-gensh run "<instruction>" [--dry-run/--run]
+qwe run "<instruction>" [--dry-run/--run]
 ```
 
 * `--dry-run` (default) – shows the command without executing it.
@@ -77,7 +77,7 @@ gensh run "<instruction>" [--dry-run/--run]
 **Example:**
 
 ```bash
-gensh run "count the number of files in the folder"
+qwe run "count the number of files in the folder"
 ```
 
 Output:
@@ -93,13 +93,13 @@ Dry run: Command not executed.
 
 ### Configuration
 
-Manage Gensh configuration:
+Manage qwe configuration:
 
 ```bash
-gensh config show           # Show all config values
-gensh config get <key>      # Get a single config key
-gensh config set <key> <value>  # Update a config value
-gensh config reset          # Reset to defaults
+qwe config show           # Show all config values
+qwe config get <key>      # Get a single config key
+qwe config set <key> <value>  # Update a config value
+qwe config reset          # Reset to defaults
 ```
 * Defalut OS Configuration : Windows
 
@@ -109,8 +109,8 @@ gensh config reset          # Reset to defaults
 **Example:**
 
 ```bash
-gensh config set os linux
-gensh config set temperature 0.3
+qwe config set os linux
+qwe config set temperature 0.3
 ```
 
 ---
@@ -120,15 +120,15 @@ gensh config set temperature 0.3
 Switch OS modes quickly:
 
 ```bash
-gensh os windows
-gensh os linux
-gensh os mac
+qwe os windows
+qwe os linux
+qwe os mac
 ```
 
 Or use:
 
 ```bash
-gensh os set <os>
+qwe os set <os>
 ```
 
 ---
@@ -138,8 +138,8 @@ gensh os set <os>
 Track your commands:
 
 ```bash
-gensh history show   # Show last 50 commands
-gensh history clear  # Clear command history
+qwe history show   # Show last 50 commands
+qwe history clear  # Clear command history
 ```
 
 ---
@@ -149,19 +149,19 @@ gensh history clear  # Clear command history
 Diagnostic and reverse-analysis tools:
 
 ```bash
-gensh tools diagnose         # Verify config, API, and model
-gensh tools models           # List available Gemini models
-gensh tools explain "<command>"  # Explain a shell command
+qwe tools diagnose         # Verify config, API, and model
+qwe tools models           # List available Gemini models
+qwe tools explain "<command>"  # Explain a shell command
 ```
 
 ---
 
 ### Version
 
-Check the current Gensh version:
+Check the current qwe version:
 
 ```bash
-gensh version
+qwe version
 ```
 
 ---
@@ -170,21 +170,21 @@ gensh version
 
 | Command                                       | Description                                                  |
 | --------------------------------------------- | ------------------------------------------------------------ |
-| `gensh run "<instruction>" [--dry-run/--run]` | Generate shell commands from natural language.               |
-| `gensh version`                               | Show the current Gensh version.                              |
-| `gensh config show`                           | Display all configuration values.                            |
-| `gensh config get <key>`                      | Get a single configuration value.                            |
-| `gensh config set <key> <value>`              | Update a configuration value (e.g., OS, model, temperature). |
-| `gensh config reset`                          | Reset configuration to defaults.                             |
-| `gensh os set <os>`                           | Set OS mode explicitly.                                      |
-| `gensh os windows`                            | Quick set OS to Windows.                                     |
-| `gensh os linux`                              | Quick set OS to Linux.                                       |
-| `gensh os mac`                                | Quick set OS to macOS.                                       |
-| `gensh history show`                          | Show the last 50 commands executed.                          |
-| `gensh history clear`                         | Clear all command history.                                   |
-| `gensh tools diagnose`                        | Check configuration, API key, and model.                     |
-| `gensh tools models`                          | List available Gemini models for your API key.               |
-| `gensh tools explain "<command>"`             | Ask Gemini to explain what a shell command does.             |
+| `qwe run "<instruction>" [--dry-run/--run]` | Generate shell commands from natural language.               |
+| `qwe version`                               | Show the current qwe version.                              |
+| `qwe config show`                           | Display all configuration values.                            |
+| `qwe config get <key>`                      | Get a single configuration value.                            |
+| `qwe config set <key> <value>`              | Update a configuration value (e.g., OS, model, temperature). |
+| `qwe config reset`                          | Reset configuration to defaults.                             |
+| `qwe os set <os>`                           | Set OS mode explicitly.                                      |
+| `qwe os windows`                            | Quick set OS to Windows.                                     |
+| `qwe os linux`                              | Quick set OS to Linux.                                       |
+| `qwe os mac`                                | Quick set OS to macOS.                                       |
+| `qwe history show`                          | Show the last 50 commands executed.                          |
+| `qwe history clear`                         | Clear all command history.                                   |
+| `qwe tools diagnose`                        | Check configuration, API key, and model.                     |
+| `qwe tools models`                          | List available Gemini models for your API key.               |
+| `qwe tools explain "<command>"`             | Ask Gemini to explain what a shell command does.             |
 
 ---
 
@@ -194,7 +194,7 @@ gensh version
 * Linux (bash, sh)
 * macOS (zsh, bash)
 
-Gensh ensures commands are OS-specific and safe to run.
+qwe ensures commands are OS-specific and safe to run.
 
 ---
 
@@ -221,7 +221,7 @@ Gensh ensures commands are OS-specific and safe to run.
 * Virtual environment recommended (`venv/`)
 
 ```markdown
-Happy scripting with Gensh — turning your instructions into shell commands!  
+Happy scripting with qwe — turning your instructions into shell commands!  
 
 Powered by Python, fueled by coffee, guided by late-night curiosity ☕🚀
 ```
