@@ -27,7 +27,10 @@ config/settings.json
 .DS_Store
 node_modules/
 dist/
+dist/*
 build/
+build/*
+npm-debug.log*
 *.log
 *.tmp
 *.bak
