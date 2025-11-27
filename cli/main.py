@@ -254,7 +254,7 @@ def create_app():
             print(f"  {k}: {v}")    
 
         # 2. Check API key
-        api_key = config.get("api_key") or config.get("gemini_api_key")
+        api_key = config.get("key")
         if not api_key:
             print("[red]✘ No Gemini API key configured[/red]")
         else:
@@ -282,7 +282,7 @@ def create_app():
         List available Gemini models for the configured API key.
         """
         config = load_config()
-        api_key = config.get("api_key") or config.get("gemini_api_key") 
+        api_key = config.get("api_key") or config.get("key") 
 
         if not api_key:
             print("[red]Missing API key. Configure using gsh config set api_key <key>[/red]")
@@ -311,7 +311,7 @@ def create_app():
         Ask Gemini to explain what a given shell command does.
         """
         config = load_config()
-        api_key = config.get("api_key") or config.get("gemini_api_key")
+        api_key = config.get("api_key") or config.get("key")
         model_name = config.get("model", "gemini-2.0-flash")    
 
         if not api_key:

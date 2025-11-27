@@ -5,10 +5,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 CONFIG_PATH = os.path.join(BASE_DIR, "config", "settings.json")
 
 DEFAULT_CONFIG = {
-    "gemini_api_key": "",
+    "key": "",
     "model": "gemini-2.0-flash",
     "os": "windows",
-    "temperature": 0.4
+    "temperature": 0.0
 }
 
 def load_config():

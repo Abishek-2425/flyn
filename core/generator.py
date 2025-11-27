@@ -2,7 +2,7 @@ import google.generativeai as genai
 from flyn.core.prompts import build_prompt
 
 def generate_command(user_input, config):
-    api_key = config.get("api_key") or config.get("gemini_api_key")
+    api_key = config.get("key")
     model_name = config.get("model", "gemini-2.0-flash")
     os_name = config.get("os", "windows").lower()
     temperature = config.get("temperature", 0.4)
