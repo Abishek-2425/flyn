@@ -1,4 +1,4 @@
-# Flexible Language Yielding Notables (flyn)
+#  flyn
 
 flyn is a natural-language to shell command generator and executor. Type what you want in plain English, and flyn converts it into an OS-specific shell command with safety checks, history, diagnostics, and configuration tools.
 
