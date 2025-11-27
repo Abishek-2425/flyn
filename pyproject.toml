@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "flyn"
-version = "0.1.2"
+version = "0.1.1"
 description = "Natural-language to shell command converter Grok API"
 readme = { file = "README.md", content-type = "text/markdown" }
 authors = [{ name = "Abishek S", email = "abishek642005@gmail.com" }]
